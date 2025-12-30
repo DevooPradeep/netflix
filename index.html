@@ -1,93 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <title>form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
 
   <style>
-    input {
-      display: block;
-      padding-bottom: 30px;
-      width: 300px;
-      height: 50px;
-      margin-bottom: 20px;
-      background: rgba(0, 0, 0, 0.5);
-      font-size: large;
-      color: white;
+    * {
+      box-sizing: border-box;
     }
 
     body {
+      margin: 0;
+      min-height: 100vh;
       background: linear-gradient(to right, black, red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+      width: 90%;
+      max-width: 1100px;
     }
 
     .Main {
       text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
 
-      width: 30%;
-      padding-left: 100px;
-      margin-left: 50%;
-      margin-top: 300px;
-      font-size: x-large;
-      border-radius: 50px;
+    h1 {
+      font-size: 42px;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    input {
+      width: 100%;
+      height: 50px;
+      margin-bottom: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      font-size: large;
+      color: white;
+      padding-left: 20px;
+      border-radius: 8px;
+    }
+
+    ::placeholder {
+      color: silver;
+      font-size: medium;
     }
 
     button {
-      width: 150px;
+      width: 100%;
       height: 50px;
       background-color: red;
       color: white;
       font-size: large;
+      border: none;
       border-radius: 10px;
+      cursor: pointer;
     }
 
-    ::placeholder {
-      font-size: larger;
-      padding-left: 30px;
-      color: silver;
-
-    }
-
-    .Box {
-      width: 600px;
-      height: 600px;
-      background-color: grey;
-      margin-left: 10px;
-      margin-top: -550px;
-      border-radius: 50px;
-
+    button:hover {
+      opacity: 0.9;
     }
 
     .Box img {
-      width: 600px;
-      height: 600px;
-      border-radius: 50px;
-
+      width: 350px;
+      height: 350px;
+      border-radius: 30px;
+      object-fit: cover;
     }
 
-    h1 {
-      font-size: 50px;
-      text-align: center;
+    /* 📱 MOBILE FIX */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .Box img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="Main">
-    <h1>Login form</h1>
-    <form>
-      <input type="text" placeholder="Enter name">
-      <input type="number" placeholder="Enter you number">
-      <input type="email" placeholder="Enter you email">
 
-      <button type="button" onclick="goToPage()">Submit</button>
-      </a>
-    </form>
-  </div>
-  <div class="Box">
-    <img src="netf.jpg" alt="netflix">
-  </div>
+  <div class="container">
+    <div class="Main">
+      <h1>Login Form</h1>
+      <form>
+        <input type="text" placeholder="Enter name">
+        <input type="number" placeholder="Enter your number">
+        <input type="email" placeholder="Enter your email">
 
+        <button type="button" onclick="goToPage()">Submit</button>
+      </form>
+    </div>
+
+    <div class="Box">
+      <img src="netf.jpg" alt="netflix">
+    </div>
+  </div>
 
   <script>
     function goToPage() {
@@ -96,5 +125,4 @@
   </script>
 
 </body>
-
 </html>
